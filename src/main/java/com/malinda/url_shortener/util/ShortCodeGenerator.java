@@ -6,9 +6,9 @@ public class ShortCodeGenerator {
     private static final String CHARACTERS =
             "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    private final SecureRandom secureRandom = new SecureRandom();
+    private static final SecureRandom secureRandom = new SecureRandom();
 
-    private String generateSHortCode() {
+    public static String generateSHortCode() {
         StringBuilder shortCode = new StringBuilder();
 
         for (int i = 0; i < 6; i++) {
