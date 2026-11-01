@@ -11,10 +11,9 @@ import java.util.concurrent.ConcurrentHashMap;
 @Service
 public class UrlServiceIMPL implements UrlService {
 
-    @Value("${app.base-url}")
-    private  String baseUrl;
-
     private final Map<String, String> urlMappings = new ConcurrentHashMap<>();
+    @Value("${app.base-url}")
+    private String baseUrl;
 
     @Override
     public String createShortUrl(String longUrl) {
@@ -25,6 +24,15 @@ public class UrlServiceIMPL implements UrlService {
             String code = ShortCodeGenerator.generateSHortCode();
             urlMappings.put(code, longUrl);
             return baseUrl + "/" + code;
+        }
+    }
+
+    @Override
+    public String redirectToOriginalUrl(String code) {
+        if (code.isEmpty() || !urlMappings.containsKey(code)) {
+            return "Invalid code";
+        } else {
+            return urlMappings.get(code);
         }
     }
 }

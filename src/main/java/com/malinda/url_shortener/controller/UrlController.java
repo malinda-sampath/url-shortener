@@ -1,12 +1,12 @@
 package com.malinda.url_shortener.controller;
 
+import com.malinda.url_shortener.dto.CreateUrlRequest;
 import com.malinda.url_shortener.service.UrlService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.net.URI;
 
 @RestController
 @RequestMapping("/api/v1/")
@@ -19,8 +19,17 @@ public class UrlController {
     }
 
     @PostMapping("/url")
-    public ResponseEntity<String> createShortUrl(@RequestBody String longUrl) {
-        String response = urlService.createShortUrl(longUrl);
+    public ResponseEntity<String> createShortUrl(@RequestBody CreateUrlRequest request) {
+        String response = urlService.createShortUrl(request.longUrl());
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    }
+
+    @GetMapping("/{code}")
+    public  ResponseEntity<Void> redirectToOriginalUrl(@PathVariable String code) {
+        String response = urlService.redirectToOriginalUrl(code);
+        return  ResponseEntity
+                .status(HttpStatus.FOUND)
+                .location(URI.create(response))
+                .build();
     }
 }
