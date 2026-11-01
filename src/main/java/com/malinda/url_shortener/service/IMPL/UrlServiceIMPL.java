@@ -23,7 +23,7 @@ public class UrlServiceIMPL implements UrlService {
         } else {
             String code = ShortCodeGenerator.generateSHortCode();
             urlMappings.put(code, longUrl);
-            return baseUrl + "/" + code;
+            return baseUrl + "/api/v1/" + code;
         }
     }
 
