@@ -8,7 +8,7 @@ public class ShortCodeGenerator {
 
     private static final SecureRandom secureRandom = new SecureRandom();
 
-    public static String generateSHortCode() {
+    public static String generateShortCode() {
         StringBuilder shortCode = new StringBuilder();
 
         for (int i = 0; i < 6; i++) {
