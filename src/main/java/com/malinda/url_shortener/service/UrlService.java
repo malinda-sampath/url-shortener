@@ -1,7 +1,9 @@
 package com.malinda.url_shortener.service;
 
+import com.malinda.url_shortener.dto.CreateUrlResult;
+
 public interface UrlService {
-    String createShortUrl(String longUrl);
+    CreateUrlResult createShortUrl(String longUrl);
 
     String redirectToOriginalUrl(String code);
 }

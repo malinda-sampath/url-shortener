@@ -1,7 +1,11 @@
 package com.malinda.url_shortener.service.IMPL;
 
+import com.malinda.url_shortener.dto.CreateUrlResponse;
+import com.malinda.url_shortener.dto.CreateUrlResult;
+import com.malinda.url_shortener.exceptions.InvalidCodeException;
 import com.malinda.url_shortener.service.UrlService;
 import com.malinda.url_shortener.util.ShortCodeGenerator;
+import com.malinda.url_shortener.util.UrlValidator;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -12,27 +16,53 @@ import java.util.concurrent.ConcurrentHashMap;
 public class UrlServiceIMPL implements UrlService {
 
     private final Map<String, String> urlMappings = new ConcurrentHashMap<>();
+
     @Value("${app.base-url}")
     private String baseUrl;
 
     @Override
-    public String createShortUrl(String longUrl) {
+    public CreateUrlResult createShortUrl(String longUrl) {
+        UrlValidator.validateUrl(longUrl);
 
-        if (urlMappings.containsValue(longUrl)) {
-            return "Url already exists";
-        } else {
-            String code = ShortCodeGenerator.generateSHortCode();
-            urlMappings.put(code, longUrl);
-            return baseUrl + "/api/v1/" + code;
+
+        for (Map.Entry<String, String> entry : urlMappings.entrySet()) {
+
+            if (entry.getValue().equals(longUrl)) {
+                String existingCode = entry.getKey();
+
+                return new CreateUrlResult(
+                        new CreateUrlResponse(
+                                existingCode,
+                                buildShortUrl(existingCode)),
+                        false
+                );
+            }
         }
+
+        String code = ShortCodeGenerator.generateShortCode();
+        urlMappings.put(code, longUrl);
+        return new CreateUrlResult(
+                new CreateUrlResponse(
+                        code,
+                        buildShortUrl(code)),
+                true
+        );
     }
 
     @Override
     public String redirectToOriginalUrl(String code) {
-        if (code.isEmpty() || !urlMappings.containsKey(code)) {
-            return "Invalid code";
+        if (!urlMappings.containsKey(code)) {
+            throw new InvalidCodeException("Unknown code");
         } else {
             return urlMappings.get(code);
         }
+    }
+
+    private String buildShortUrl(String code) {
+        String normalizedBaseUrl = baseUrl.endsWith("/")
+                ? baseUrl
+                : baseUrl + "/";
+
+        return normalizedBaseUrl + code;
     }
 }
