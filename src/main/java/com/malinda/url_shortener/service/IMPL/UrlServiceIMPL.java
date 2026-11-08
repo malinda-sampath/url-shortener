@@ -2,6 +2,7 @@ package com.malinda.url_shortener.service.IMPL;
 
 import com.malinda.url_shortener.dto.CreateUrlResponse;
 import com.malinda.url_shortener.dto.CreateUrlResult;
+import com.malinda.url_shortener.exceptions.InvalidCodeException;
 import com.malinda.url_shortener.service.UrlService;
 import com.malinda.url_shortener.util.ShortCodeGenerator;
 import com.malinda.url_shortener.util.UrlValidator;
@@ -53,7 +54,7 @@ public class UrlServiceIMPL implements UrlService {
     @Override
     public String redirectToOriginalUrl(String code) {
         if (code.isEmpty() || !urlMappings.containsKey(code)) {
-            return "Invalid code";
+            throw new InvalidCodeException("Unknown code");
         } else {
             return urlMappings.get(code);
         }

@@ -15,4 +15,11 @@ public class GlobalExceptionHandler {
                 .status(HttpStatus.BAD_REQUEST)
                 .body(new ApiErrorResponse(e.getMessage()));
     }
+
+    @ExceptionHandler(InvalidCodeException.class)
+    public ResponseEntity<ApiErrorResponse> handleInvalidCodeException(InvalidCodeException e) {
+        return  ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(new ApiErrorResponse(e.getMessage()));
+    }
 }
