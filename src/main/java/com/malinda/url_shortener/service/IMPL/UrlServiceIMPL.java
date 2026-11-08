@@ -7,8 +7,6 @@ import com.malinda.url_shortener.service.UrlService;
 import com.malinda.url_shortener.util.ShortCodeGenerator;
 import com.malinda.url_shortener.util.UrlValidator;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -35,7 +33,7 @@ public class UrlServiceIMPL implements UrlService {
                 return new CreateUrlResult(
                         new CreateUrlResponse(
                                 existingCode,
-                                baseUrl + existingCode),
+                                buildShortUrl(existingCode)),
                         false
                 );
             }
@@ -46,17 +44,25 @@ public class UrlServiceIMPL implements UrlService {
         return new CreateUrlResult(
                 new CreateUrlResponse(
                         code,
-                        baseUrl + code),
+                        buildShortUrl(code)),
                 true
         );
     }
 
     @Override
     public String redirectToOriginalUrl(String code) {
-        if (code.isEmpty() || !urlMappings.containsKey(code)) {
+        if (!urlMappings.containsKey(code)) {
             throw new InvalidCodeException("Unknown code");
         } else {
             return urlMappings.get(code);
         }
+    }
+
+    private String buildShortUrl(String code) {
+        String normalizedBaseUrl = baseUrl.endsWith("/")
+                ? baseUrl
+                : baseUrl + "/";
+
+        return normalizedBaseUrl + code;
     }
 }

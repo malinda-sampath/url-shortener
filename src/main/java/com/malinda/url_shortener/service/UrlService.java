@@ -1,6 +1,5 @@
 package com.malinda.url_shortener.service;
 
-import com.malinda.url_shortener.dto.CreateUrlResponse;
 import com.malinda.url_shortener.dto.CreateUrlResult;
 
 public interface UrlService {
