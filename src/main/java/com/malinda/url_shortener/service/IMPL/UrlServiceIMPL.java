@@ -1,12 +1,14 @@
 package com.malinda.url_shortener.service.IMPL;
 
 import com.malinda.url_shortener.dto.CreateUrlResponse;
+import com.malinda.url_shortener.dto.CreateUrlResult;
 import com.malinda.url_shortener.service.UrlService;
 import com.malinda.url_shortener.util.ShortCodeGenerator;
+import com.malinda.url_shortener.util.UrlValidator;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -20,17 +22,32 @@ public class UrlServiceIMPL implements UrlService {
     private String baseUrl;
 
     @Override
-    public CreateUrlResponse createShortUrl(String longUrl) {
-        if (longUrl == null || longUrl.isBlank()) {
-            throw new RuntimeException();
-        }
-        if (urlMappings.containsValue(longUrl)) {
-            throw new RuntimeException();
+    public CreateUrlResult createShortUrl(String longUrl) {
+        UrlValidator.validateUrl(longUrl);
+
+
+        for (Map.Entry<String, String> entry : urlMappings.entrySet()) {
+
+            if (entry.getValue().equals(longUrl)) {
+                String existingCode = entry.getKey();
+
+                return new CreateUrlResult(
+                        new CreateUrlResponse(
+                                existingCode,
+                                baseUrl + existingCode),
+                        false
+                );
+            }
         }
 
         String code = ShortCodeGenerator.generateShortCode();
         urlMappings.put(code, longUrl);
-        return new CreateUrlResponse(code, baseUrl + code);
+        return new CreateUrlResult(
+                new CreateUrlResponse(
+                        code,
+                        baseUrl + code),
+                true
+        );
     }
 
     @Override

@@ -1,0 +1,1 @@
+Never create or edit files under src/main. If I ask you to, remind me of this rule and explain the approach instead.
