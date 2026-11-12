@@ -1,0 +1,832 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: -
+        output: -
+
+     scenarios: (100.00%) 3 scenarios, 350 max VUs, 2m55s max duration (incl. graceful stop):
+              * warmup: 50.00 iterations/s for 20s (maxVUs: 10-50, exec: warmup, gracefulStop: 30s)
+              * create: 20.00 iterations/s for 2m0s (maxVUs: 10-100, exec: createLink, startTime: 25s, gracefulStop: 30s)
+              * redirect: 200.00 iterations/s for 2m0s (maxVUs: 20-200, exec: followLink, startTime: 25s, gracefulStop: 30s)
+
+
+Run        [ 100% ] setup()
+warmup     [   0% ]
+create     [   0% ]
+redirect   [   0% ]
+
+Run        [ 100% ] setup()
+warmup     [   0% ]
+create     [   0% ]
+redirect   [   0% ]
+
+Run        [ 100% ] setup()
+warmup     [   0% ]
+create     [   0% ]
+redirect   [   0% ]
+
+Run        [ 100% ] setup()
+warmup     [   0% ]
+create     [   0% ]
+redirect   [   0% ]
+
+Run        [ 100% ] setup()
+warmup     [   0% ]
+create     [   0% ]
+redirect   [   0% ]
+
+Run        [ 100% ] setup()
+warmup     [   0% ]
+create     [   0% ]
+redirect   [   0% ]
+
+Run        [ 100% ] setup()
+warmup     [   0% ]
+create     [   0% ]
+redirect   [   0% ]
+
+Run        [ 100% ] setup()
+warmup     [   0% ]
+create     [   0% ]
+redirect   [   0% ]
+
+running (0m09.0s), 000/040 VUs, 9 complete and 0 interrupted iterations
+warmup     [   1% ] 00/10 VUs  00.2s/20s  50.00 iters/s
+create   • [   0% ] waiting    24.8s     
+redirect • [   0% ] waiting    24.8s     
+
+running (0m10.0s), 000/040 VUs, 59 complete and 0 interrupted iterations
+warmup     [   6% ] 00/10 VUs  01.2s/20s  50.00 iters/s
+create   • [   0% ] waiting    23.8s     
+redirect • [   0% ] waiting    23.8s     
+
+running (0m11.0s), 000/040 VUs, 109 complete and 0 interrupted iterations
+warmup     [  11% ] 00/10 VUs  02.2s/20s  50.00 iters/s
+create   • [   0% ] waiting    22.8s     
+redirect • [   0% ] waiting    22.8s     
+
+running (0m12.0s), 000/040 VUs, 159 complete and 0 interrupted iterations
+warmup     [  16% ] 00/10 VUs  03.2s/20s  50.00 iters/s
+create   • [   0% ] waiting    21.8s     
+redirect • [   0% ] waiting    21.8s     
+
+running (0m13.0s), 000/040 VUs, 209 complete and 0 interrupted iterations
+warmup     [  21% ] 00/10 VUs  04.2s/20s  50.00 iters/s
+create   • [   0% ] waiting    20.8s     
+redirect • [   0% ] waiting    20.8s     
+
+running (0m14.0s), 000/040 VUs, 259 complete and 0 interrupted iterations
+warmup     [  26% ] 00/10 VUs  05.2s/20s  50.00 iters/s
+create   • [   0% ] waiting    19.8s     
+redirect • [   0% ] waiting    19.8s     
+
+running (0m15.0s), 000/040 VUs, 309 complete and 0 interrupted iterations
+warmup     [  31% ] 00/10 VUs  06.2s/20s  50.00 iters/s
+create   • [   0% ] waiting    18.8s     
+redirect • [   0% ] waiting    18.8s     
+
+running (0m16.0s), 000/040 VUs, 359 complete and 0 interrupted iterations
+warmup     [  36% ] 00/10 VUs  07.2s/20s  50.00 iters/s
+create   • [   0% ] waiting    17.8s     
+redirect • [   0% ] waiting    17.8s     
+
+running (0m17.0s), 000/040 VUs, 409 complete and 0 interrupted iterations
+warmup     [  41% ] 00/10 VUs  08.2s/20s  50.00 iters/s
+create   • [   0% ] waiting    16.8s     
+redirect • [   0% ] waiting    16.8s     
+
+running (0m18.0s), 000/040 VUs, 459 complete and 0 interrupted iterations
+warmup     [  46% ] 00/10 VUs  09.2s/20s  50.00 iters/s
+create   • [   0% ] waiting    15.8s     
+redirect • [   0% ] waiting    15.8s     
+
+running (0m19.0s), 000/040 VUs, 509 complete and 0 interrupted iterations
+warmup     [  51% ] 00/10 VUs  10.2s/20s  50.00 iters/s
+create   • [   0% ] waiting    14.8s     
+redirect • [   0% ] waiting    14.8s     
+
+running (0m20.0s), 000/040 VUs, 559 complete and 0 interrupted iterations
+warmup     [  56% ] 00/10 VUs  11.2s/20s  50.00 iters/s
+create   • [   0% ] waiting    13.8s     
+redirect • [   0% ] waiting    13.8s     
+
+running (0m21.0s), 000/040 VUs, 609 complete and 0 interrupted iterations
+warmup     [  61% ] 00/10 VUs  12.2s/20s  50.00 iters/s
+create   • [   0% ] waiting    12.8s     
+redirect • [   0% ] waiting    12.8s     
+
+running (0m22.0s), 000/040 VUs, 659 complete and 0 interrupted iterations
+warmup     [  66% ] 00/10 VUs  13.2s/20s  50.00 iters/s
+create   • [   0% ] waiting    11.8s     
+redirect • [   0% ] waiting    11.8s     
+
+running (0m23.0s), 000/040 VUs, 709 complete and 0 interrupted iterations
+warmup     [  71% ] 00/10 VUs  14.2s/20s  50.00 iters/s
+create   • [   0% ] waiting    10.8s     
+redirect • [   0% ] waiting    10.8s     
+
+running (0m24.0s), 000/040 VUs, 759 complete and 0 interrupted iterations
+warmup     [  76% ] 00/10 VUs  15.2s/20s  50.00 iters/s
+create   • [   0% ] waiting    09.8s     
+redirect • [   0% ] waiting    09.8s     
+
+running (0m25.0s), 000/040 VUs, 809 complete and 0 interrupted iterations
+warmup     [  81% ] 00/10 VUs  16.2s/20s  50.00 iters/s
+create   • [   0% ] waiting    08.8s     
+redirect • [   0% ] waiting    08.8s     
+
+running (0m26.0s), 000/040 VUs, 859 complete and 0 interrupted iterations
+warmup     [  86% ] 00/10 VUs  17.2s/20s  50.00 iters/s
+create   • [   0% ] waiting    07.8s     
+redirect • [   0% ] waiting    07.8s     
+
+running (0m27.0s), 000/040 VUs, 909 complete and 0 interrupted iterations
+warmup     [  91% ] 00/10 VUs  18.2s/20s  50.00 iters/s
+create   • [   0% ] waiting    06.8s     
+redirect • [   0% ] waiting    06.8s     
+
+running (0m28.0s), 000/040 VUs, 959 complete and 0 interrupted iterations
+warmup     [  96% ] 00/10 VUs  19.2s/20s  50.00 iters/s
+create   • [   0% ] waiting    05.8s     
+redirect • [   0% ] waiting    05.8s     
+
+running (0m29.0s), 000/040 VUs, 1001 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs  20s  50.00 iters/s
+create   • [   0% ] waiting    04.8s
+redirect • [   0% ] waiting    04.8s
+
+running (0m30.0s), 000/040 VUs, 1001 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs  20s  50.00 iters/s
+create   • [   0% ] waiting    03.8s
+redirect • [   0% ] waiting    03.8s
+
+running (0m31.0s), 000/040 VUs, 1001 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs  20s  50.00 iters/s
+create   • [   0% ] waiting    02.8s
+redirect • [   0% ] waiting    02.8s
+
+running (0m32.0s), 000/040 VUs, 1001 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs  20s  50.00 iters/s
+create   • [   0% ] waiting    01.8s
+redirect • [   0% ] waiting    01.8s
+
+running (0m33.0s), 000/040 VUs, 1001 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs  20s  50.00 iters/s
+create   • [   0% ] waiting    00.8s
+redirect • [   0% ] waiting    00.8s
+
+running (0m34.0s), 000/040 VUs, 1041 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [   0% ] 000/010 VUs  0m00.2s/2m0s  20.00 iters/s
+redirect   [   0% ] 000/020 VUs  0m00.2s/2m0s  200.00 iters/s
+
+running (0m35.0s), 000/040 VUs, 1261 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [   1% ] 000/010 VUs  0m01.2s/2m0s  20.00 iters/s
+redirect   [   1% ] 000/020 VUs  0m01.2s/2m0s  200.00 iters/s
+
+running (0m36.0s), 000/040 VUs, 1481 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [   2% ] 000/010 VUs  0m02.2s/2m0s  20.00 iters/s
+redirect   [   2% ] 000/020 VUs  0m02.2s/2m0s  200.00 iters/s
+
+running (0m37.0s), 001/040 VUs, 1700 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [   3% ] 000/010 VUs  0m03.2s/2m0s  20.00 iters/s
+redirect   [   3% ] 000/020 VUs  0m03.2s/2m0s  200.00 iters/s
+
+running (0m38.0s), 000/040 VUs, 1921 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [   3% ] 000/010 VUs  0m04.2s/2m0s  20.00 iters/s
+redirect   [   3% ] 000/020 VUs  0m04.2s/2m0s  200.00 iters/s
+
+running (0m39.0s), 000/040 VUs, 2141 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [   4% ] 000/010 VUs  0m05.2s/2m0s  20.00 iters/s
+redirect   [   4% ] 000/020 VUs  0m05.2s/2m0s  200.00 iters/s
+
+running (0m40.0s), 000/040 VUs, 2361 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [   5% ] 000/010 VUs  0m06.2s/2m0s  20.00 iters/s
+redirect   [   5% ] 000/020 VUs  0m06.2s/2m0s  200.00 iters/s
+
+running (0m41.0s), 000/040 VUs, 2581 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [   6% ] 000/010 VUs  0m07.2s/2m0s  20.00 iters/s
+redirect   [   6% ] 000/020 VUs  0m07.2s/2m0s  200.00 iters/s
+
+running (0m42.0s), 000/040 VUs, 2801 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [   7% ] 000/010 VUs  0m08.2s/2m0s  20.00 iters/s
+redirect   [   7% ] 000/020 VUs  0m08.2s/2m0s  200.00 iters/s
+
+running (0m43.0s), 000/040 VUs, 3021 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [   8% ] 000/010 VUs  0m09.2s/2m0s  20.00 iters/s
+redirect   [   8% ] 000/020 VUs  0m09.2s/2m0s  200.00 iters/s
+
+running (0m44.0s), 000/040 VUs, 3241 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [   8% ] 000/010 VUs  0m10.2s/2m0s  20.00 iters/s
+redirect   [   8% ] 000/020 VUs  0m10.2s/2m0s  200.00 iters/s
+
+running (0m45.0s), 000/040 VUs, 3461 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [   9% ] 000/010 VUs  0m11.2s/2m0s  20.00 iters/s
+redirect   [   9% ] 000/020 VUs  0m11.2s/2m0s  200.00 iters/s
+
+running (0m46.0s), 001/040 VUs, 3680 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  10% ] 000/010 VUs  0m12.2s/2m0s  20.00 iters/s
+redirect   [  10% ] 001/020 VUs  0m12.2s/2m0s  200.00 iters/s
+
+running (0m47.0s), 001/040 VUs, 3900 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  11% ] 000/010 VUs  0m13.2s/2m0s  20.00 iters/s
+redirect   [  11% ] 001/020 VUs  0m13.2s/2m0s  200.00 iters/s
+
+running (0m48.0s), 000/040 VUs, 4121 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  12% ] 000/010 VUs  0m14.2s/2m0s  20.00 iters/s
+redirect   [  12% ] 000/020 VUs  0m14.2s/2m0s  200.00 iters/s
+
+running (0m49.0s), 000/040 VUs, 4341 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  13% ] 000/010 VUs  0m15.2s/2m0s  20.00 iters/s
+redirect   [  13% ] 000/020 VUs  0m15.2s/2m0s  200.00 iters/s
+
+running (0m50.0s), 000/040 VUs, 4561 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  13% ] 000/010 VUs  0m16.2s/2m0s  20.00 iters/s
+redirect   [  13% ] 000/020 VUs  0m16.2s/2m0s  200.00 iters/s
+
+running (0m51.0s), 000/040 VUs, 4781 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  14% ] 000/010 VUs  0m17.2s/2m0s  20.00 iters/s
+redirect   [  14% ] 000/020 VUs  0m17.2s/2m0s  200.00 iters/s
+
+running (0m52.0s), 001/040 VUs, 5000 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  15% ] 000/010 VUs  0m18.2s/2m0s  20.00 iters/s
+redirect   [  15% ] 000/020 VUs  0m18.2s/2m0s  200.00 iters/s
+
+running (0m53.0s), 000/040 VUs, 5221 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  16% ] 000/010 VUs  0m19.2s/2m0s  20.00 iters/s
+redirect   [  16% ] 000/020 VUs  0m19.2s/2m0s  200.00 iters/s
+
+running (0m54.0s), 000/040 VUs, 5441 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  17% ] 000/010 VUs  0m20.2s/2m0s  20.00 iters/s
+redirect   [  17% ] 000/020 VUs  0m20.2s/2m0s  200.00 iters/s
+
+running (0m55.0s), 000/040 VUs, 5661 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  18% ] 000/010 VUs  0m21.2s/2m0s  20.00 iters/s
+redirect   [  18% ] 000/020 VUs  0m21.2s/2m0s  200.00 iters/s
+
+running (0m56.0s), 000/040 VUs, 5881 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  18% ] 000/010 VUs  0m22.2s/2m0s  20.00 iters/s
+redirect   [  18% ] 000/020 VUs  0m22.2s/2m0s  200.00 iters/s
+
+running (0m57.0s), 000/040 VUs, 6101 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  19% ] 000/010 VUs  0m23.2s/2m0s  20.00 iters/s
+redirect   [  19% ] 000/020 VUs  0m23.2s/2m0s  200.00 iters/s
+
+running (0m58.0s), 000/040 VUs, 6321 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  20% ] 000/010 VUs  0m24.2s/2m0s  20.00 iters/s
+redirect   [  20% ] 000/020 VUs  0m24.2s/2m0s  200.00 iters/s
+
+running (0m59.0s), 000/040 VUs, 6541 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  21% ] 000/010 VUs  0m25.2s/2m0s  20.00 iters/s
+redirect   [  21% ] 000/020 VUs  0m25.2s/2m0s  200.00 iters/s
+
+running (1m00.0s), 000/040 VUs, 6761 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  22% ] 000/010 VUs  0m26.2s/2m0s  20.00 iters/s
+redirect   [  22% ] 000/020 VUs  0m26.2s/2m0s  200.00 iters/s
+
+running (1m01.0s), 000/040 VUs, 6981 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  23% ] 000/010 VUs  0m27.2s/2m0s  20.00 iters/s
+redirect   [  23% ] 001/020 VUs  0m27.2s/2m0s  200.00 iters/s
+
+running (1m02.0s), 000/040 VUs, 7201 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  23% ] 000/010 VUs  0m28.2s/2m0s  20.00 iters/s
+redirect   [  23% ] 000/020 VUs  0m28.2s/2m0s  200.00 iters/s
+
+running (1m03.0s), 000/040 VUs, 7421 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  24% ] 000/010 VUs  0m29.2s/2m0s  20.00 iters/s
+redirect   [  24% ] 000/020 VUs  0m29.2s/2m0s  200.00 iters/s
+
+running (1m04.0s), 015/040 VUs, 7626 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  25% ] 001/010 VUs  0m30.2s/2m0s  20.00 iters/s
+redirect   [  25% ] 014/020 VUs  0m30.2s/2m0s  200.00 iters/s
+
+running (1m05.0s), 001/040 VUs, 7860 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  26% ] 000/010 VUs  0m31.2s/2m0s  20.00 iters/s
+redirect   [  26% ] 001/020 VUs  0m31.2s/2m0s  200.00 iters/s
+
+running (1m06.0s), 000/040 VUs, 8081 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  27% ] 000/010 VUs  0m32.2s/2m0s  20.00 iters/s
+redirect   [  27% ] 000/020 VUs  0m32.2s/2m0s  200.00 iters/s
+
+running (1m07.0s), 000/040 VUs, 8301 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  28% ] 000/010 VUs  0m33.2s/2m0s  20.00 iters/s
+redirect   [  28% ] 000/020 VUs  0m33.2s/2m0s  200.00 iters/s
+
+running (1m08.0s), 000/040 VUs, 8521 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  28% ] 000/010 VUs  0m34.2s/2m0s  20.00 iters/s
+redirect   [  28% ] 000/020 VUs  0m34.2s/2m0s  200.00 iters/s
+
+running (1m09.0s), 000/040 VUs, 8741 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  29% ] 000/010 VUs  0m35.2s/2m0s  20.00 iters/s
+redirect   [  29% ] 000/020 VUs  0m35.2s/2m0s  200.00 iters/s
+
+running (1m10.0s), 000/040 VUs, 8961 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  30% ] 000/010 VUs  0m36.2s/2m0s  20.00 iters/s
+redirect   [  30% ] 000/020 VUs  0m36.2s/2m0s  200.00 iters/s
+
+running (1m11.0s), 000/040 VUs, 9181 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  31% ] 000/010 VUs  0m37.2s/2m0s  20.00 iters/s
+redirect   [  31% ] 001/020 VUs  0m37.2s/2m0s  200.00 iters/s
+
+running (1m12.0s), 000/040 VUs, 9401 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  32% ] 000/010 VUs  0m38.2s/2m0s  20.00 iters/s
+redirect   [  32% ] 000/020 VUs  0m38.2s/2m0s  200.00 iters/s
+
+running (1m13.1s), 004/040 VUs, 9616 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  33% ] 001/010 VUs  0m39.3s/2m0s  20.00 iters/s
+redirect   [  33% ] 003/020 VUs  0m39.3s/2m0s  200.00 iters/s
+
+running (1m14.0s), 000/041 VUs, 9834 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  33% ] 000/010 VUs  0m40.2s/2m0s  20.00 iters/s
+redirect   [  33% ] 000/021 VUs  0m40.2s/2m0s  200.00 iters/s
+
+running (1m15.0s), 000/062 VUs, 10033 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  34% ] 000/010 VUs  0m41.2s/2m0s  20.00 iters/s
+redirect   [  34% ] 000/042 VUs  0m41.2s/2m0s  200.00 iters/s
+
+running (1m16.0s), 000/062 VUs, 10253 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  35% ] 000/010 VUs  0m42.2s/2m0s  20.00 iters/s
+redirect   [  35% ] 000/042 VUs  0m42.2s/2m0s  200.00 iters/s
+
+running (1m17.0s), 000/062 VUs, 10473 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  36% ] 000/010 VUs  0m43.2s/2m0s  20.00 iters/s
+redirect   [  36% ] 000/042 VUs  0m43.2s/2m0s  200.00 iters/s
+
+running (1m18.0s), 000/062 VUs, 10693 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  37% ] 000/010 VUs  0m44.2s/2m0s  20.00 iters/s
+redirect   [  37% ] 000/042 VUs  0m44.2s/2m0s  200.00 iters/s
+
+running (1m19.0s), 000/062 VUs, 10913 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  38% ] 000/010 VUs  0m45.2s/2m0s  20.00 iters/s
+redirect   [  38% ] 000/042 VUs  0m45.2s/2m0s  200.00 iters/s
+
+running (1m20.0s), 001/062 VUs, 11133 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  38% ] 000/010 VUs  0m46.2s/2m0s  20.00 iters/s
+redirect   [  38% ] 001/042 VUs  0m46.2s/2m0s  200.00 iters/s
+
+running (1m21.0s), 013/062 VUs, 11340 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  39% ] 001/010 VUs  0m47.2s/2m0s  20.00 iters/s
+redirect   [  39% ] 012/042 VUs  0m47.2s/2m0s  200.00 iters/s
+
+running (1m22.0s), 000/070 VUs, 11565 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  40% ] 000/010 VUs  0m48.2s/2m0s  20.00 iters/s
+redirect   [  40% ] 000/050 VUs  0m48.2s/2m0s  200.00 iters/s
+
+running (1m23.0s), 000/070 VUs, 11785 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  41% ] 000/010 VUs  0m49.2s/2m0s  20.00 iters/s
+redirect   [  41% ] 000/050 VUs  0m49.2s/2m0s  200.00 iters/s
+
+running (1m24.0s), 000/070 VUs, 12005 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  42% ] 000/010 VUs  0m50.2s/2m0s  20.00 iters/s
+redirect   [  42% ] 000/050 VUs  0m50.2s/2m0s  200.00 iters/s
+
+running (1m25.0s), 000/070 VUs, 12225 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  43% ] 000/010 VUs  0m51.2s/2m0s  20.00 iters/s
+redirect   [  43% ] 000/050 VUs  0m51.2s/2m0s  200.00 iters/s
+
+running (1m26.0s), 000/070 VUs, 12445 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  43% ] 000/010 VUs  0m52.2s/2m0s  20.00 iters/s
+redirect   [  43% ] 000/050 VUs  0m52.2s/2m0s  200.00 iters/s
+
+running (1m27.0s), 001/070 VUs, 12664 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  44% ] 000/010 VUs  0m53.2s/2m0s  20.00 iters/s
+redirect   [  44% ] 001/050 VUs  0m53.2s/2m0s  200.00 iters/s
+
+running (1m28.0s), 001/070 VUs, 12884 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  45% ] 000/010 VUs  0m54.2s/2m0s  20.00 iters/s
+redirect   [  45% ] 001/050 VUs  0m54.2s/2m0s  200.00 iters/s
+
+running (1m29.0s), 001/070 VUs, 13104 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  46% ] 000/010 VUs  0m55.2s/2m0s  20.00 iters/s
+redirect   [  46% ] 001/050 VUs  0m55.2s/2m0s  200.00 iters/s
+
+running (1m30.0s), 050/070 VUs, 13284 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  47% ] 005/010 VUs  0m56.2s/2m0s  20.00 iters/s
+redirect   [  47% ] 045/050 VUs  0m56.2s/2m0s  200.00 iters/s
+
+running (1m31.0s), 000/078 VUs, 13537 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  48% ] 000/010 VUs  0m57.2s/2m0s  20.00 iters/s
+redirect   [  48% ] 000/058 VUs  0m57.2s/2m0s  200.00 iters/s
+
+running (1m32.0s), 000/078 VUs, 13757 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  48% ] 000/010 VUs  0m58.2s/2m0s  20.00 iters/s
+redirect   [  48% ] 000/058 VUs  0m58.2s/2m0s  200.00 iters/s
+
+running (1m33.0s), 000/078 VUs, 13977 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  49% ] 000/010 VUs  0m59.2s/2m0s  20.00 iters/s
+redirect   [  49% ] 000/058 VUs  0m59.2s/2m0s  200.00 iters/s
+
+running (1m34.0s), 000/078 VUs, 14197 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  50% ] 000/010 VUs  1m00.2s/2m0s  20.00 iters/s
+redirect   [  50% ] 000/058 VUs  1m00.2s/2m0s  200.00 iters/s
+
+running (1m35.0s), 000/078 VUs, 14417 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  51% ] 000/010 VUs  1m01.2s/2m0s  20.00 iters/s
+redirect   [  51% ] 000/058 VUs  1m01.2s/2m0s  200.00 iters/s
+
+running (1m36.0s), 000/078 VUs, 14637 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  52% ] 000/010 VUs  1m02.2s/2m0s  20.00 iters/s
+redirect   [  52% ] 000/058 VUs  1m02.2s/2m0s  200.00 iters/s
+
+running (1m37.0s), 000/078 VUs, 14857 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  53% ] 000/010 VUs  1m03.2s/2m0s  20.00 iters/s
+redirect   [  53% ] 000/058 VUs  1m03.2s/2m0s  200.00 iters/s
+
+running (1m38.0s), 000/078 VUs, 15077 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  53% ] 000/010 VUs  1m04.2s/2m0s  20.00 iters/s
+redirect   [  53% ] 000/058 VUs  1m04.2s/2m0s  200.00 iters/s
+
+running (1m39.0s), 000/078 VUs, 15297 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  54% ] 000/010 VUs  1m05.2s/2m0s  20.00 iters/s
+redirect   [  54% ] 000/058 VUs  1m05.2s/2m0s  200.00 iters/s
+
+running (1m40.0s), 000/078 VUs, 15517 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  55% ] 000/010 VUs  1m06.2s/2m0s  20.00 iters/s
+redirect   [  55% ] 000/058 VUs  1m06.2s/2m0s  200.00 iters/s
+
+running (1m41.0s), 002/078 VUs, 15736 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  56% ] 000/010 VUs  1m07.2s/2m0s  20.00 iters/s
+redirect   [  56% ] 002/058 VUs  1m07.2s/2m0s  200.00 iters/s
+
+running (1m42.0s), 000/078 VUs, 15957 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  57% ] 000/010 VUs  1m08.2s/2m0s  20.00 iters/s
+redirect   [  57% ] 000/058 VUs  1m08.2s/2m0s  200.00 iters/s
+
+running (1m43.0s), 000/078 VUs, 16177 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  58% ] 000/010 VUs  1m09.2s/2m0s  20.00 iters/s
+redirect   [  58% ] 000/058 VUs  1m09.2s/2m0s  200.00 iters/s
+
+running (1m44.0s), 000/078 VUs, 16397 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  58% ] 000/010 VUs  1m10.2s/2m0s  20.00 iters/s
+redirect   [  58% ] 000/058 VUs  1m10.2s/2m0s  200.00 iters/s
+
+running (1m45.0s), 000/078 VUs, 16617 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  59% ] 000/010 VUs  1m11.2s/2m0s  20.00 iters/s
+redirect   [  59% ] 000/058 VUs  1m11.2s/2m0s  200.00 iters/s
+
+running (1m46.0s), 001/078 VUs, 16837 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  60% ] 000/010 VUs  1m12.2s/2m0s  20.00 iters/s
+redirect   [  60% ] 001/058 VUs  1m12.2s/2m0s  200.00 iters/s
+
+running (1m47.0s), 000/078 VUs, 17057 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  61% ] 000/010 VUs  1m13.2s/2m0s  20.00 iters/s
+redirect   [  61% ] 000/058 VUs  1m13.2s/2m0s  200.00 iters/s
+
+running (1m48.0s), 000/078 VUs, 17277 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  62% ] 000/010 VUs  1m14.2s/2m0s  20.00 iters/s
+redirect   [  62% ] 000/058 VUs  1m14.2s/2m0s  200.00 iters/s
+
+running (1m49.0s), 000/078 VUs, 17497 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  63% ] 000/010 VUs  1m15.2s/2m0s  20.00 iters/s
+redirect   [  63% ] 000/058 VUs  1m15.2s/2m0s  200.00 iters/s
+
+running (1m50.0s), 000/078 VUs, 17717 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  63% ] 000/010 VUs  1m16.2s/2m0s  20.00 iters/s
+redirect   [  63% ] 000/058 VUs  1m16.2s/2m0s  200.00 iters/s
+
+running (1m51.0s), 000/078 VUs, 17937 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  64% ] 000/010 VUs  1m17.2s/2m0s  20.00 iters/s
+redirect   [  64% ] 000/058 VUs  1m17.2s/2m0s  200.00 iters/s
+
+running (1m52.0s), 000/078 VUs, 18157 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  65% ] 000/010 VUs  1m18.2s/2m0s  20.00 iters/s
+redirect   [  65% ] 000/058 VUs  1m18.2s/2m0s  200.00 iters/s
+
+running (1m53.0s), 000/078 VUs, 18377 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  66% ] 000/010 VUs  1m19.2s/2m0s  20.00 iters/s
+redirect   [  66% ] 000/058 VUs  1m19.2s/2m0s  200.00 iters/s
+
+running (1m54.0s), 001/078 VUs, 18597 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  67% ] 000/010 VUs  1m20.2s/2m0s  20.00 iters/s
+redirect   [  67% ] 001/058 VUs  1m20.2s/2m0s  200.00 iters/s
+
+running (1m55.0s), 000/078 VUs, 18817 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  68% ] 000/010 VUs  1m21.2s/2m0s  20.00 iters/s
+redirect   [  68% ] 000/058 VUs  1m21.2s/2m0s  200.00 iters/s
+
+running (1m56.0s), 000/078 VUs, 19037 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  68% ] 000/010 VUs  1m22.2s/2m0s  20.00 iters/s
+redirect   [  68% ] 000/058 VUs  1m22.2s/2m0s  200.00 iters/s
+
+running (1m57.0s), 000/078 VUs, 19257 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  69% ] 000/010 VUs  1m23.2s/2m0s  20.00 iters/s
+redirect   [  69% ] 001/058 VUs  1m23.2s/2m0s  200.00 iters/s
+
+running (1m58.0s), 000/078 VUs, 19477 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  70% ] 000/010 VUs  1m24.2s/2m0s  20.00 iters/s
+redirect   [  70% ] 000/058 VUs  1m24.2s/2m0s  200.00 iters/s
+
+running (1m59.0s), 000/078 VUs, 19697 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  71% ] 000/010 VUs  1m25.2s/2m0s  20.00 iters/s
+redirect   [  71% ] 000/058 VUs  1m25.2s/2m0s  200.00 iters/s
+
+running (2m00.0s), 000/078 VUs, 19917 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  72% ] 000/010 VUs  1m26.2s/2m0s  20.00 iters/s
+redirect   [  72% ] 001/058 VUs  1m26.2s/2m0s  200.00 iters/s
+
+running (2m01.0s), 000/078 VUs, 20137 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  73% ] 000/010 VUs  1m27.2s/2m0s  20.00 iters/s
+redirect   [  73% ] 000/058 VUs  1m27.2s/2m0s  200.00 iters/s
+
+running (2m02.0s), 001/078 VUs, 20356 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  73% ] 000/010 VUs  1m28.2s/2m0s  20.00 iters/s
+redirect   [  73% ] 001/058 VUs  1m28.2s/2m0s  200.00 iters/s
+
+running (2m03.0s), 002/078 VUs, 20575 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  74% ] 000/010 VUs  1m29.2s/2m0s  20.00 iters/s
+redirect   [  74% ] 000/058 VUs  1m29.2s/2m0s  200.00 iters/s
+
+running (2m04.0s), 000/078 VUs, 20797 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  75% ] 000/010 VUs  1m30.2s/2m0s  20.00 iters/s
+redirect   [  75% ] 000/058 VUs  1m30.2s/2m0s  200.00 iters/s
+
+running (2m05.0s), 000/078 VUs, 21017 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  76% ] 000/010 VUs  1m31.2s/2m0s  20.00 iters/s
+redirect   [  76% ] 000/058 VUs  1m31.2s/2m0s  200.00 iters/s
+
+running (2m06.0s), 000/078 VUs, 21237 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  77% ] 000/010 VUs  1m32.2s/2m0s  20.00 iters/s
+redirect   [  77% ] 000/058 VUs  1m32.2s/2m0s  200.00 iters/s
+
+running (2m07.0s), 000/078 VUs, 21457 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  78% ] 000/010 VUs  1m33.2s/2m0s  20.00 iters/s
+redirect   [  78% ] 000/058 VUs  1m33.2s/2m0s  200.00 iters/s
+
+running (2m08.0s), 001/078 VUs, 21676 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  78% ] 000/010 VUs  1m34.2s/2m0s  20.00 iters/s
+redirect   [  78% ] 001/058 VUs  1m34.2s/2m0s  200.00 iters/s
+
+running (2m09.0s), 000/078 VUs, 21897 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  79% ] 000/010 VUs  1m35.2s/2m0s  20.00 iters/s
+redirect   [  79% ] 000/058 VUs  1m35.2s/2m0s  200.00 iters/s
+
+running (2m10.0s), 000/078 VUs, 22117 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  80% ] 000/010 VUs  1m36.2s/2m0s  20.00 iters/s
+redirect   [  80% ] 000/058 VUs  1m36.2s/2m0s  200.00 iters/s
+
+running (2m11.0s), 000/078 VUs, 22337 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  81% ] 000/010 VUs  1m37.2s/2m0s  20.00 iters/s
+redirect   [  81% ] 000/058 VUs  1m37.2s/2m0s  200.00 iters/s
+
+running (2m12.0s), 000/078 VUs, 22557 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  82% ] 000/010 VUs  1m38.2s/2m0s  20.00 iters/s
+redirect   [  82% ] 000/058 VUs  1m38.2s/2m0s  200.00 iters/s
+
+running (2m13.0s), 000/078 VUs, 22777 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  83% ] 000/010 VUs  1m39.2s/2m0s  20.00 iters/s
+redirect   [  83% ] 000/058 VUs  1m39.2s/2m0s  200.00 iters/s
+
+running (2m14.0s), 000/078 VUs, 22997 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  83% ] 000/010 VUs  1m40.2s/2m0s  20.00 iters/s
+redirect   [  83% ] 000/058 VUs  1m40.2s/2m0s  200.00 iters/s
+
+running (2m15.0s), 000/078 VUs, 23217 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  84% ] 000/010 VUs  1m41.2s/2m0s  20.00 iters/s
+redirect   [  84% ] 000/058 VUs  1m41.2s/2m0s  200.00 iters/s
+
+running (2m16.0s), 000/078 VUs, 23437 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  85% ] 000/010 VUs  1m42.2s/2m0s  20.00 iters/s
+redirect   [  85% ] 000/058 VUs  1m42.2s/2m0s  200.00 iters/s
+
+running (2m17.0s), 000/078 VUs, 23657 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  86% ] 000/010 VUs  1m43.2s/2m0s  20.00 iters/s
+redirect   [  86% ] 000/058 VUs  1m43.2s/2m0s  200.00 iters/s
+
+running (2m18.0s), 000/078 VUs, 23877 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  87% ] 000/010 VUs  1m44.2s/2m0s  20.00 iters/s
+redirect   [  87% ] 000/058 VUs  1m44.2s/2m0s  200.00 iters/s
+
+running (2m19.0s), 001/078 VUs, 24097 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  88% ] 000/010 VUs  1m45.2s/2m0s  20.00 iters/s
+redirect   [  88% ] 001/058 VUs  1m45.2s/2m0s  200.00 iters/s
+
+running (2m20.0s), 000/078 VUs, 24317 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  88% ] 000/010 VUs  1m46.2s/2m0s  20.00 iters/s
+redirect   [  88% ] 000/058 VUs  1m46.2s/2m0s  200.00 iters/s
+
+running (2m21.0s), 000/078 VUs, 24537 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  89% ] 000/010 VUs  1m47.2s/2m0s  20.00 iters/s
+redirect   [  89% ] 000/058 VUs  1m47.2s/2m0s  200.00 iters/s
+
+running (2m22.0s), 000/078 VUs, 24757 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  90% ] 000/010 VUs  1m48.2s/2m0s  20.00 iters/s
+redirect   [  90% ] 000/058 VUs  1m48.2s/2m0s  200.00 iters/s
+
+running (2m23.0s), 000/078 VUs, 24977 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  91% ] 000/010 VUs  1m49.2s/2m0s  20.00 iters/s
+redirect   [  91% ] 000/058 VUs  1m49.2s/2m0s  200.00 iters/s
+
+running (2m24.0s), 000/078 VUs, 25197 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  92% ] 000/010 VUs  1m50.2s/2m0s  20.00 iters/s
+redirect   [  92% ] 000/058 VUs  1m50.2s/2m0s  200.00 iters/s
+
+running (2m25.0s), 000/078 VUs, 25417 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  93% ] 000/010 VUs  1m51.2s/2m0s  20.00 iters/s
+redirect   [  93% ] 000/058 VUs  1m51.2s/2m0s  200.00 iters/s
+
+running (2m26.0s), 000/078 VUs, 25637 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  93% ] 000/010 VUs  1m52.2s/2m0s  20.00 iters/s
+redirect   [  93% ] 000/058 VUs  1m52.2s/2m0s  200.00 iters/s
+
+running (2m27.0s), 000/078 VUs, 25857 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  94% ] 000/010 VUs  1m53.2s/2m0s  20.00 iters/s
+redirect   [  94% ] 000/058 VUs  1m53.2s/2m0s  200.00 iters/s
+
+running (2m28.0s), 000/078 VUs, 26077 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  95% ] 000/010 VUs  1m54.2s/2m0s  20.00 iters/s
+redirect   [  95% ] 000/058 VUs  1m54.2s/2m0s  200.00 iters/s
+
+running (2m29.0s), 001/078 VUs, 26297 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  96% ] 000/010 VUs  1m55.2s/2m0s  20.00 iters/s
+redirect   [  96% ] 001/058 VUs  1m55.2s/2m0s  200.00 iters/s
+
+running (2m30.0s), 001/078 VUs, 26517 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  97% ] 000/010 VUs  1m56.2s/2m0s  20.00 iters/s
+redirect   [  97% ] 001/058 VUs  1m56.2s/2m0s  200.00 iters/s
+
+running (2m31.0s), 000/078 VUs, 26737 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  98% ] 000/010 VUs  1m57.2s/2m0s  20.00 iters/s
+redirect   [  98% ] 000/058 VUs  1m57.2s/2m0s  200.00 iters/s
+
+running (2m32.0s), 000/078 VUs, 26957 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  98% ] 000/010 VUs  1m58.2s/2m0s  20.00 iters/s
+redirect   [  98% ] 000/058 VUs  1m58.2s/2m0s  200.00 iters/s
+
+running (2m33.0s), 003/079 VUs, 27139 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s           50.00 iters/s
+create     [  99% ] 000/010 VUs  1m59.2s/2m0s  20.00 iters/s
+redirect   [  99% ] 003/059 VUs  1m59.2s/2m0s  200.00 iters/s
+
+
+  █ THRESHOLDS 
+
+    checks
+    ✓ 'rate==1' rate=100.00%
+
+    http_req_failed
+    ✓ 'rate==0' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 51157   332.471416/s
+    checks_succeeded...: 100.00% 51157 out of 51157
+    checks_failed......: 0.00%   0 out of 51157
+
+    ✓ warmup: create returns 201
+    ✓ create: status is 201
+    ✓ redirect: status is 302
+    ✓ redirect: Location header present
+
+    CUSTOM
+    create_latency.................: avg=8.05ms min=1.09ms   med=2.3ms  p(95)=8.47ms p(99)=195.35ms max=724.75ms count=2398 
+    redirect_latency...............: avg=6.2ms  min=706.24µs med=1.73ms p(95)=6.15ms p(99)=127.04ms max=773.92ms count=23879
+
+    HTTP
+    http_req_duration..............: avg=6.19ms min=706.24µs med=1.84ms p(95)=6.63ms p(99)=111.64ms max=773.92ms count=29279
+      { expected_response:true }...: avg=6.19ms min=706.24µs med=1.84ms p(95)=6.63ms p(99)=111.64ms max=773.92ms count=29279
+    http_req_failed................: 0.00%  0 out of 29279
+    http_reqs......................: 29279  190.285408/s
+
+    EXECUTION
+    dropped_iterations.............: 124    0.805881/s
+    iteration_duration.............: avg=6.84ms min=819.67µs med=2.08ms p(95)=7.3ms  p(99)=156.44ms max=774.2ms  count=27278
+    iterations.....................: 27278  177.280828/s
+    vus............................: 3      min=0          max=15
+    vus_max........................: 79     min=40         max=79
+
+    NETWORK
+    data_received..................: 4.1 MB 27 kB/s
+    data_sent......................: 3.0 MB 20 kB/s
+
+
+
+
+running (2m33.9s), 000/118 VUs, 27278 complete and 0 interrupted iterations
+warmup   ✓ [ 100% ] 00/10 VUs    20s   50.00 iters/s
+create   ✓ [ 100% ] 000/012 VUs  2m0s  20.00 iters/s
+redirect ✓ [ 100% ] 000/096 VUs  2m0s  200.00 iters/s

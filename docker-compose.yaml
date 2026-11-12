@@ -1,0 +1,30 @@
+# Local infrastructure for the URL shortener.
+#
+# Start:   docker compose up -d --wait   (returns once Postgres is healthy)
+# Stop:    docker compose down           (removes the container, KEEPS the data)
+# Wipe:    docker compose down -v        (DELETES the database volume and every link in it)
+
+services:
+  postgres:
+    # Pin the major version, so an upgrade is a decision you make, not something that just happens.
+    image: postgres:18-alpine
+    environment:
+      POSTGRES_DB: shortener
+      POSTGRES_USER: shortener
+      POSTGRES_PASSWORD: shortener   # local development only; never commit a real password
+    ports:
+      # Bound to 127.0.0.1, so only this machine can connect.
+      # If 5432 is already taken (e.g. a Postgres installed on Windows), change the left side: "127.0.0.1:5433:5432".
+      - "127.0.0.1:5432:5432"
+    volumes:
+      # The data lives in a named volume, so it outlives the container.
+      # From PostgreSQL 18 the image expects the mount at /var/lib/postgresql (17 and older used /var/lib/postgresql/data).
+      - pgdata:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U shortener -d shortener"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  pgdata:
