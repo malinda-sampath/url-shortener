@@ -10,46 +10,56 @@ A URL shortener in Spring Boot, built as a **learning project**. The point is to
 
 - **Do not write or modify application code** (anything under `src/main/`): no controllers, services, entities, repositories, configs or "quick fixes". This holds even when a test fails and the fix looks obvious.
 - When a test fails, **report it, don't fix it**: name the failing test, the assertion or exception, and the file or line it points to. Stop there. Don't propose a code patch unless I ask for one.
-- **Allowed when I ask:** complete tests (`src/test/`), load-test scripts (k6 or JMeter, under `load-tests/`), and infrastructure config (Docker Compose, Nginx and similar).
+- **Allowed when I ask:** complete tests (`src/test/`), load-test scripts (k6, under `load-test/`), and infrastructure config (Docker Compose, Nginx and similar).
 - Don't add dependencies, tools or infrastructure (cache, queue, load balancer and so on) on your own. Each one is brought in by a specific stage, only when that stage's problem justifies it.
 - Don't refactor, reformat or "tidy" code you weren't asked to touch.
 
 ## Current state
 
 - **Stage 1 (done):** in-memory map storing code → URL.
-- **Stage 2 (in progress):** persistence with **PostgreSQL** via **Spring Data JPA**, so links survive restarts. One `links` table, with the short code as the primary key.
+- **Stage 2 (done):** persistence with **PostgreSQL** via **Spring Data JPA**, so links survive restarts. One `links` table, with the short code as the primary key.
+- **Stage 3:** not started yet. Its problem gets set in the mentoring chat, so don't anticipate it here.
 - Agreed API behaviour:
   - `POST` to create a short link returns **201** for a new URL.
   - Submitting a URL that already exists returns the **existing** short link with **200** (not a new code, not a 409).
   - `GET /{code}` redirects to the original URL.
+- Each finished stage is tagged in git (`stage-1`, `stage-2`). Reviews and load comparisons are in `docs/reviews/`, and k6 results are in `load-test/results/`.
+- Open review findings carried past Stage 2 are listed in `docs/reviews/stage-2-review-r2.md` (section 7). Treat them as facts to report on, not work to do.
 - The progress log lives in the claude.ai project ("URL Shortener: Project Context"), not in this repo.
 
 ## Tech stack
 
-- Java [version], Spring Boot [version], [Maven/Gradle]
-- PostgreSQL (local, via Docker Compose)
-- k6 (or JMeter) for load tests
+- Java 21, Spring Boot 4.1.2, Maven (`./mvnw`)
+- PostgreSQL 18 (`postgres:18-alpine`, local via `docker-compose.yaml`), schema owned by Flyway (`src/main/resources/db/migration`), `ddl-auto: validate`
+- Tests: JUnit 5, MockMvc, Testcontainers PostgreSQL (`TestcontainersConfiguration`, `@ServiceConnection`)
+- k6 (run via Docker) for load tests
 
 ## Commands
 
-Fill in once the build tool is fixed:
-
 ```bash
-# Start local infrastructure
-docker compose up -d
+# Start local infrastructure (dev database "shortener" on 127.0.0.1:5432)
+docker compose up -d --wait
 
-# Run all tests
-./mvnw test            # or: ./gradlew test
+# Run all tests (Docker must be running: tests start their own PostgreSQL via Testcontainers)
+./mvnw -B test
 
 # Run one test class
-./mvnw test -Dtest=ClassName        # or: ./gradlew test --tests ClassName
+./mvnw test -Dtest=ClassName
 
-# Run the app
-./mvnw spring-boot:run              # or: ./gradlew bootRun
+# Run the app (default port 8081, from application.yaml)
+./mvnw spring-boot:run
 
-# Load test
-k6 run load-tests/<script>.js
+# Run the jar for manual checks or load tests (settings via command-line arguments, never by editing config)
+./mvnw -B -DskipTests package
+java -jar target/url-shortener-0.0.1-SNAPSHOT.jar --server.port=8090 --app.base-url=http://localhost:8090
+
+# Load test (script on stdin; it targets host.docker.internal:8090)
+docker run --rm -i grafana/k6 run - < load-test/baseline.js
+# PowerShell: Get-Content load-test/baseline.js | docker run --rm -i grafana/k6 run -
 ```
+
+- Load tests against Stage 2+ use a throwaway database (`shortener_load`, passed via `--spring.datasource.url`), so dev data in `shortener` stays untouched.
+- Build an older stage's jar from its tag in a separate worktree (`git worktree add ../url-shortener-stage1 stage-1`), then remove the worktree afterwards.
 
 ## Writing tests (when asked)
 
