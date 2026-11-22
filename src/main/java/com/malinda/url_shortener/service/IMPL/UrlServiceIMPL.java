@@ -2,7 +2,9 @@ package com.malinda.url_shortener.service.IMPL;
 
 import com.malinda.url_shortener.dto.CreateUrlResponse;
 import com.malinda.url_shortener.dto.CreateUrlResult;
+import com.malinda.url_shortener.entity.Link;
 import com.malinda.url_shortener.exceptions.InvalidCodeException;
+import com.malinda.url_shortener.repo.LinkRepository;
 import com.malinda.url_shortener.service.UrlService;
 import com.malinda.url_shortener.util.ShortCodeGenerator;
 import com.malinda.url_shortener.util.UrlValidator;
@@ -10,26 +12,30 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Service
 public class UrlServiceIMPL implements UrlService {
 
-    private final Map<String, String> urlMappings = new ConcurrentHashMap<>();
+    private final LinkRepository linkRepository;
 
     @Value("${app.base-url}")
     private String baseUrl;
+
+    public UrlServiceIMPL(LinkRepository linkRepository) {
+        this.linkRepository = linkRepository;
+    }
 
     @Override
     public CreateUrlResult createShortUrl(String longUrl) {
         UrlValidator.validateUrl(longUrl);
 
+        Optional<Link> existingLink = linkRepository.findByLongUrl(longUrl);
 
-        for (Map.Entry<String, String> entry : urlMappings.entrySet()) {
+            if (existingLink.isPresent()) {
 
-            if (entry.getValue().equals(longUrl)) {
-                String existingCode = entry.getKey();
-
+                String existingCode = existingLink.get().getCode();
                 return new CreateUrlResult(
                         new CreateUrlResponse(
                                 existingCode,
@@ -37,25 +43,28 @@ public class UrlServiceIMPL implements UrlService {
                         false
                 );
             }
-        }
 
         String code = ShortCodeGenerator.generateShortCode();
-        urlMappings.put(code, longUrl);
+        Link link = new Link(code,longUrl);
+        linkRepository.save(link);
         return new CreateUrlResult(
                 new CreateUrlResponse(
                         code,
-                        buildShortUrl(code)),
+                        buildShortUrl(code)
+                ),
                 true
         );
     }
 
     @Override
     public String redirectToOriginalUrl(String code) {
-        if (!urlMappings.containsKey(code)) {
-            throw new InvalidCodeException("Unknown code");
-        } else {
-            return urlMappings.get(code);
-        }
+//        if (!urlMappings.containsKey(code)) {
+//            throw new InvalidCodeException("Unknown code");
+//        } else {
+//            return urlMappings.get(code);
+//        }
+
+        return "";
     }
 
     private String buildShortUrl(String code) {
