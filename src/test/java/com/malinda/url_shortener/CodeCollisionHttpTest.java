@@ -26,6 +26,11 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
  * static mock; MockMvc runs the request on this thread) to return X for a POST of a new
  * URL B. The existing link must not be overwritten, and code X must not be handed out
  * for B. The response status is printed so the report can record it.
+ *
+ * Once the collision reaches the database, an unhandled DataIntegrityViolationException
+ * may escape perform() instead of producing a response. Either that exception or a 5xx
+ * response counts as "the request failed"; the stored-row and handed-out-code checks
+ * apply in every case.
  */
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -48,18 +53,28 @@ class CodeCollisionHttpTest {
                 .param("url", urlA)
                 .update();
 
-        MvcResult result;
+        MvcResult result = null;
+        Exception escaped = null;
         try (MockedStatic<ShortCodeGenerator> generator = mockStatic(ShortCodeGenerator.class)) {
             generator.when(ShortCodeGenerator::generateShortCode).thenReturn(takenCode);
             result = mockMvc.perform(post("/api/urls")
                             .contentType(MediaType.APPLICATION_JSON)
                             .content("{\"url\": \"" + urlB + "\"}"))
                     .andReturn();
+        } catch (Exception e) {
+            escaped = e;
         }
 
-        int status = result.getResponse().getStatus();
-        String body = result.getResponse().getContentAsString();
-        System.out.println("[CodeCollisionHttpTest] POST with taken code -> status " + status + ", body " + body);
+        int status = -1;
+        String body = null;
+        if (result != null) {
+            status = result.getResponse().getStatus();
+            body = result.getResponse().getContentAsString();
+            System.out.println("[CodeCollisionHttpTest] POST with taken code -> status " + status + ", body " + body);
+        } else {
+            System.out.println("[CodeCollisionHttpTest] POST with taken code -> perform() threw " + escaped
+                    + (escaped.getCause() != null ? "; cause: " + escaped.getCause() : ""));
+        }
 
         String stored = jdbc.sql("SELECT long_url FROM links WHERE code = :code")
                 .param("code", takenCode)
