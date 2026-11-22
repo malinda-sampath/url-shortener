@@ -9,4 +9,5 @@ import java.util.Optional;
 @Repository
 public interface LinkRepository extends JpaRepository<Link, String> {
     Optional<Link> findByLongUrl(String longUrl);
+    Optional<Link> findByCode(String code);
 }

@@ -58,13 +58,12 @@ public class UrlServiceIMPL implements UrlService {
 
     @Override
     public String redirectToOriginalUrl(String code) {
-//        if (!urlMappings.containsKey(code)) {
-//            throw new InvalidCodeException("Unknown code");
-//        } else {
-//            return urlMappings.get(code);
-//        }
-
-        return "";
+        Optional<Link> link = linkRepository.findByCode(code);
+        if (link.isEmpty()) {
+            throw new InvalidCodeException("Unknown code");
+        } else {
+            return link.get().getLongUrl();
+        }
     }
 
     private String buildShortUrl(String code) {
