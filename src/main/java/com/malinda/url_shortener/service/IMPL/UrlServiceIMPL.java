@@ -56,7 +56,7 @@ public class UrlServiceIMPL implements UrlService {
 
     @Override
     public String redirectToOriginalUrl(String code) {
-        Optional<Link> link = linkRepository.findByCode(code);
+        Optional<Link> link = linkRepository.findById(code);
         if (link.isEmpty()) {
             throw new InvalidCodeException("Unknown code");
         } else {
