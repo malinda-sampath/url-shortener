@@ -7,9 +7,12 @@ import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
+import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
+
+import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -20,11 +23,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  *   POST /api/urls new URL           -> 201 {"code", "shortUrl"}
  *   POST /api/urls already shortened -> 200 {"code", "shortUrl"} with the existing code
  *   POST /api/urls missing / blank / malformed / not http(s) -> 400
- * HTTP only (MockMvc). All test classes share one in-memory store, so every URL here
- * uses a host under errcases.example.com that appears in no other test.
+ * HTTP only (MockMvc). Test classes share one PostgreSQL (Testcontainers), so every URL here
+ * uses a host under errcases.example.com that appears in no other test, and the stored
+ * duplicate URL carries a per-run UUID.
  */
 @SpringBootTest
 @AutoConfigureMockMvc
+@Import(TestcontainersConfiguration.class)
 class UrlShortenerErrorCasesTest {
 
     @Autowired
@@ -39,7 +44,7 @@ class UrlShortenerErrorCasesTest {
 
     @Test
     void sameUrlTwiceReturns201ThenExisting200WithSameCodeAndShortUrl() throws Exception {
-        String body = "{\"url\": \"https://dup.errcases.example.com/page?x=1\"}";
+        String body = "{\"url\": \"https://dup.errcases.example.com/page?x=1&run=" + UUID.randomUUID() + "\"}";
 
         MvcResult first = mockMvc.perform(post("/api/urls")
                         .contentType(MediaType.APPLICATION_JSON)
