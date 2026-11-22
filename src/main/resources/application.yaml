@@ -2,6 +2,16 @@ spring:
   application:
     name: url-shortener
 
+  datasource:
+    url: jdbc:postgresql://localhost:5432/shortener
+    username: shortener
+    password: shortener
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+
 server:
   port: 8081
 

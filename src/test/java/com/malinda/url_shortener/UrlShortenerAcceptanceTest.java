@@ -5,9 +5,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
+import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
+
+import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -20,14 +23,18 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  *   POST /api/urls {"url": "..."} -> 201 {"code": "...", "shortUrl": "<base>/<code>"}
  *   GET  /{code}                  -> 3xx, Location: original url | 404 if unknown
  * Exercises the app only through HTTP (MockMvc does not follow redirects).
+ * Stage 2: links persist in PostgreSQL (Testcontainers), so every URL carries a per-run
+ * UUID (RUN) to stay unique across test methods and classes sharing the database.
  */
 @SpringBootTest
 @AutoConfigureMockMvc
+@Import(TestcontainersConfiguration.class)
 class UrlShortenerAcceptanceTest {
 
+    private static final String RUN = UUID.randomUUID().toString();
     private static final String TRACKING_URL =
-            "https://shop.example.com/products/12345?utm_source=sms&utm_campaign=launch";
-    private static final String ENCODED_URL = "https://example.com/search?q=hello%20world";
+            "https://shop.example.com/products/12345?utm_source=sms&utm_campaign=launch&run=" + RUN;
+    private static final String ENCODED_URL = "https://example.com/search?q=hello%20world&run=" + RUN;
 
     @Autowired
     private MockMvc mockMvc;
@@ -56,7 +63,7 @@ class UrlShortenerAcceptanceTest {
 
     @Test
     void createReturns201WithCodeAndShortUrl() throws Exception {
-        shorten("https://example.com/some/page");
+        shorten("https://example.com/some/page?run=" + RUN);
     }
 
     @Test
@@ -79,8 +86,8 @@ class UrlShortenerAcceptanceTest {
 
     @Test
     void differentUrlsGetDifferentCodesAndRedirectToTheirOwnOriginal() throws Exception {
-        String urlA = "https://a.example.com/first";
-        String urlB = "https://b.example.com/second";
+        String urlA = "https://a.example.com/first?run=" + RUN;
+        String urlB = "https://b.example.com/second?run=" + RUN;
 
         String codeA = shorten(urlA);
         String codeB = shorten(urlB);
