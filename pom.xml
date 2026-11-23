@@ -72,6 +72,11 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+		<!-- Validation -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
 
 		<!-- Testcontainers (test only): throwaway PostgreSQL for the test suite -->
 		<dependency>
