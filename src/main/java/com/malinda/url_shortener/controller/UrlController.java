@@ -22,7 +22,7 @@ public class UrlController {
 
     @PostMapping("/api/urls")
     public ResponseEntity<CreateUrlResponse> createShortUrl(@Valid @RequestBody CreateUrlRequest request) {
-        CreateUrlResult response = urlService.createShortUrl(request.getLongUrl());
+        CreateUrlResult response = urlService.createShortUrl(request.getUrl());
 
         if (response.created()) {
             return ResponseEntity

@@ -9,5 +9,5 @@ public class CreateUrlRequest {
 
     @NotBlank(message = "URL cannot be empty")
     @Size(max = 2048, message = "URL cannot exceed {max} characters")
-    private String longUrl;
+    private String url;
 }
