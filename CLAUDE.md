@@ -54,8 +54,8 @@ docker compose up -d --wait
 java -jar target/url-shortener-0.0.1-SNAPSHOT.jar --server.port=8090 --app.base-url=http://localhost:8090
 
 # Load test (script on stdin; it targets host.docker.internal:8090)
-docker run --rm -i grafana/k6 run - < load-test/baseline.js
-# PowerShell: Get-Content load-test/baseline.js | docker run --rm -i grafana/k6 run -
+docker run --rm -i grafana/k6:2.3.0 run - < load-test/baseline.js
+# PowerShell: Get-Content load-test/baseline.js | docker run --rm -i grafana/k6:2.3.0 run -
 ```
 
 - Load tests against Stage 2+ use a throwaway database (`shortener_load`, passed via `--spring.datasource.url`), so dev data in `shortener` stays untouched.

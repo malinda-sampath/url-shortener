@@ -4,6 +4,7 @@ import com.malinda.url_shortener.dto.CreateUrlRequest;
 import com.malinda.url_shortener.dto.CreateUrlResponse;
 import com.malinda.url_shortener.dto.CreateUrlResult;
 import com.malinda.url_shortener.service.UrlService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,10 +21,10 @@ public class UrlController {
     }
 
     @PostMapping("/api/urls")
-    public ResponseEntity<CreateUrlResponse> createShortUrl(@RequestBody CreateUrlRequest request) {
-        CreateUrlResult response = urlService.createShortUrl(request.url());
+    public ResponseEntity<CreateUrlResponse> createShortUrl(@Valid @RequestBody CreateUrlRequest request) {
+        CreateUrlResult response = urlService.createShortUrl(request.getUrl());
 
-        if (response.created()){
+        if (response.created()) {
             return ResponseEntity
                     .status(HttpStatus.CREATED)
                     .body(response.response());
@@ -35,9 +36,9 @@ public class UrlController {
     }
 
     @GetMapping("/{code}")
-    public  ResponseEntity<Void> redirectToOriginalUrl(@PathVariable String code) {
+    public ResponseEntity<Void> redirectToOriginalUrl(@PathVariable String code) {
         String response = urlService.redirectToOriginalUrl(code);
-        return  ResponseEntity
+        return ResponseEntity
                 .status(HttpStatus.FOUND)
                 .location(URI.create(response))
                 .build();

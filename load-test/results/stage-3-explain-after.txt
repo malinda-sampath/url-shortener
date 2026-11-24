@@ -1,0 +1,17 @@
+                                                              QUERY PLAN                                                               
+---------------------------------------------------------------------------------------------------------------------------------------
+ Index Scan using idx_links_long_url on links  (cost=9.13..17.15 rows=1 width=126) (actual time=0.610..0.613 rows=1.00 loops=1)
+   Index Cond: (long_url = (InitPlan 1).col1)
+   Index Searches: 1
+   Buffers: shared hit=10
+   InitPlan 1
+     ->  Index Scan using links_pkey on links links_1  (cost=0.43..8.45 rows=1 width=117) (actual time=0.138..0.140 rows=1.00 loops=1)
+           Index Cond: ((code)::text = 'L4999999'::text)
+           Index Searches: 1
+           Buffers: shared hit=4
+ Planning:
+   Buffers: shared hit=111
+ Planning Time: 7.098 ms
+ Execution Time: 0.784 ms
+(13 rows)
+

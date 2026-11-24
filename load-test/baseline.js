@@ -5,11 +5,11 @@
 // Restart the app before every run so each run starts with an empty store.
 //
 // Run with Docker (script fed on stdin, so no volume mount is needed):
-//   docker run --rm -i grafana/k6 run - < load-test/baseline.js
+//   docker run --rm -i grafana/k6:2.3.0 run - < load-test/baseline.js
 // PowerShell has no "<" redirection, so pipe the file instead:
-//   Get-Content load-test/baseline.js | docker run --rm -i grafana/k6 run -
+//   Get-Content load-test/baseline.js | docker run --rm -i grafana/k6:2.3.0 run -
 // Override settings with k6's -e flag, for example:
-//   docker run --rm -i grafana/k6 run -e REDIRECT_RATE=1000 - < load-test/baseline.js
+//   docker run --rm -i grafana/k6:2.3.0 run -e REDIRECT_RATE=1000 - < load-test/baseline.js
 
 import http from 'k6/http';
 import exec from 'k6/execution';
