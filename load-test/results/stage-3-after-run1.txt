@@ -1,0 +1,52 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: -
+        output: -
+
+     scenarios: (100.00%) 3 scenarios, 350 max VUs, 2m55s max duration (incl. graceful stop):
+              * warmup: 50.00 iterations/s for 20s (maxVUs: 10-50, exec: warmup, gracefulStop: 30s)
+              * create: 20.00 iterations/s for 2m0s (maxVUs: 10-100, exec: createLink, startTime: 25s, gracefulStop: 30s)
+              * redirect: 200.00 iterations/s for 2m0s (maxVUs: 20-200, exec: followLink, startTime: 25s, gracefulStop: 30s)
+
+
+
+  █ THRESHOLDS 
+
+    checks
+    ✓ 'rate==1' rate=0.00%
+
+    http_req_failed
+    ✗ 'rate==0' rate=100.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 0     0/s
+    checks_succeeded...: 0.00% 0 out of 0
+    checks_failed......: 0.00% 0 out of 0
+
+
+    HTTP
+    http_req_duration...: avg=128.78ms min=128.78ms med=128.78ms p(95)=128.78ms p(99)=128.78ms max=128.78ms count=1
+    http_req_failed.....: 100.00% 1 out of 1
+    http_reqs...........: 1       4.431389/s
+
+    NETWORK
+    data_received.......: 177 B   784 B/s
+    data_sent...........: 197 B   873 B/s
+
+
+
+
+Run        [ 100% ] setup()
+warmup     [   0% ]
+create     [   0% ]
+redirect   [   0% ]
+time="2026-11-24T07:09:32Z" level=error msg="Error: setup: expected 201, got 400: {\"message\":\"URL cannot be empty\"}\n\tat setup (file:///-:96:19(52))\n" hint="script exception" source=stacktrace
